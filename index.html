@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>BradyHand</title>
+
+    <!-- <//xml//> -->
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/index_style.css">
+</head>
+
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+
+                <img src="/img/logo-bradyhand.png" alt="Logo BradyHand">
+
+            </a>
+
+            <div class="nav-links">
+
+                <button class="tab-btn active" data-tab="inicio">Inicio</button>
+                <button class="tab-btn" data-tab="funcionamiento">Cómo Funciona</button>
+                <button class="tab-btn" data-tab="pruebas">Pruebas</button>
+               
+            </div>
+
+            <a href="login.html" class="btn-login">Iniciar Sesión</a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <!-- INICIO -->
+    <section id="inicio" class="tab-content active">
+
+        <div class="home-section">
+
+            <div class="home-text">
+
+                <span class="section-tag">BradyHand</span>
+
+                <h1>Cada movimiento importa</h1>
+
+                <p>
+                    BradyHand es una herramienta de apoyo para el seguimiento
+                    de movimientos asociados a la bradicinesia mediante un
+                    guante inteligente y una plataforma web.
+                </p>
+
+                <a href="login.html" class="home-button">
+                    Iniciar sesión
+                </a>
+
+            </div>
+
+            <div class="home-image">
+
+                <img src="img/guante.png" alt="guante BradyHand">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="funcionamiento" class="tab-content">
+
+        <div class="info-section">
+
+            <span class="section-tag">Funcionamiento</span>
+
+            <h1>¿Cómo funciona BradyHand?</h1>
+
+            <p class="section-description">
+                El sistema registra diferentes movimientos de la mano y
+                permite consultar sus resultados desde la plataforma.
+            </p>
+
+
+            <div class="steps-container">
+
+                <div class="step-card">
+                    <span class="step-number">1</span>
+
+                    <h3>Realizar la prueba</h3>
+
+                    <p>
+                        El paciente utiliza el guante y realiza los movimientos
+                        indicados por el profesional.
+                    </p>
+                </div>
+
+
+                <div class="step-card">
+                    <span class="step-number">2</span>
+
+                    <h3>Registrar datos</h3>
+
+                    <p>
+                        Los sensores capturan información relacionada con el
+                        movimiento, contacto y presión.
+                    </p>
+                </div>
+
+
+                <div class="step-card">
+                    <span class="step-number">3</span>
+
+                    <h3>Consultar resultados</h3>
+
+                    <p>
+                        El profesional puede consultar las pruebas y el
+                        historial de cada paciente.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRUEBAS -->
+    <section id="pruebas" class="tab-content">
+
+        <div class="info-section">
+
+            <span class="section-tag">Pruebas</span>
+
+            <h1>Movimientos evaluados</h1>
+
+            <p class="section-description">
+                BradyHand utiliza diferentes acciones de la mano para registrar
+                características relevantes del movimiento.
+            </p>
+
+
+            <div class="tests-container">
+
+                <div class="test-card">
+
+                    <img src="/img/MPU.png" alt="Prueba-Flexion" class="test-image">
+
+                    <div class="test-icon">
+                        01
+                    </div>
+
+                    <h3>Flexión y extensión</h3>
+
+                    <p>
+                        Movimiento repetitivo de la muñeca para analizar
+                        velocidad y comportamiento del movimiento.
+                    </p>
+
+                </div>
+
+
+                <div class="test-card">
+
+                    <img src="/img/TTP.png" alt="Prueba-Toque" class="test-image">
+
+                    <div class="test-icon">
+                        02
+                    </div>
+
+                    <h3>Toque de dedos</h3>
+
+                    <p>
+                        Contacto repetitivo entre el dedo medio y el pulgar
+                        para registrar frecuencia y pausas.
+                    </p>
+
+                </div>
+
+
+                <div class="test-card">
+
+                    <img src="/img/FSR.png" alt="Prueba-Presion" class="test-image">
+
+                    <div class="test-icon">
+                        03
+                    </div>
+
+                    <h3>Presión</h3>
+
+                    <p>
+                        Presión entre los dedos para registrar cambios en la
+                        fuerza aplicada durante la prueba.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="/js/home.js"></script>
+
+</body>
+
+</html>

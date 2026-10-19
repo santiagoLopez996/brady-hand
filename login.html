@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar sesión | BradyHand</title>
+
+    <!-- <//xml//> -->
+
+    <!-- Fuente Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS del login -->
+    <link rel="stylesheet" href="/css/login.css">
+
+</head>
+
+
+<body>
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+        <a href="index.html" class="login-logo">
+
+            <img src="/img/logo-bradyhand.png" alt="Logo BradyHand">
+
+        </a>
+
+        <div class="login-header">
+
+            <h1>Iniciar Sesión</h1>
+
+            <p>Acceso para profesionales de la salud</p>
+
+        </div>
+
+        <form class="login-form" id="login-form">
+
+            <div class="form-group">
+
+                <label for="email">Correo electronico</label>
+                <input type="email"
+                id="email"
+                name="email"
+                placeholder="correo@gmail.com">
+
+            </div>
+
+            <div class="form-group" id="login-form">
+
+                <label for="password">Contraseña</label>
+                <input type="password"
+                id="password"
+                name="password"
+                placeholder="Ingresa tu contraseña">
+
+            </div>  
+            
+            <button type="submit" class="btn-login-submit">Iniciar Sesión</button>
+            
+        <div class="login-divider">
+            <span>o</span>
+        </div>
+
+        <button
+            type="button"
+            class="btn-google"
+            id="btn-google"
+        >
+            Continuar con Google
+        </button>            
+
+<div class="login-options">
+
+    <p>
+        ¿Olvidaste tu contraseña?
+        <a href="#" id="open-reset-modal">
+            Recuperarla
+        </a>
+    </p>
+
+</div>            
+
+            <div class="register-link">
+
+                <p>
+                    ¿No tienes una cuenta?
+
+                    <a href="crearCuenta.html">
+            Crear cuenta
+                    </a>
+                </p>
+
+            </div>
+        
+        </form>
+
+
+        </section>
+
+    </main>
+
+<div class="reset-modal" id="reset-modal">
+
+    <div class="reset-modal-content">
+
+        <div class="reset-modal-header">
+
+            <div>
+                <h2>Recuperar contraseña</h2>
+
+                <p>
+                    Ingresa el correo asociado a tu cuenta.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="reset-modal-close"
+                id="reset-modal-close"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <form id="reset-password-form">
+
+            <div class="form-group">
+
+                <label for="reset-email">
+                    Correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    id="reset-email"
+                    placeholder="correo@ejemplo.com"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn-login-submit"
+            >
+                Enviar enlace
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+    <script type="module" src="/js/login.js"></script>
+    <script type="module" src="/js/googleAuth.js"></script>
+
+</body>
+
+</html>

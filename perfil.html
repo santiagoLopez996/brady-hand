@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mi perfil | BradyHand</title>
+
+    <!-- <//xml//> -->
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/perfil.css">
+
+</head>
+
+
+<body>
+
+
+    <header class="profile-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="profile-logo">
+
+                <img src="/img/logo-bradyhand.png" alt="Logo BradyHand">
+
+            </a>
+
+            <a href="#" class="btn-logout" id="btn-logout">Cerrar Sesion</a>
+
+        </div>
+
+    </header>
+
+
+    <main class="profile-main">
+
+        <section class="welcome-section">
+
+            <h1>
+
+                Hola, <span id="doctor-first-name">...</span>
+
+            </h1>
+
+            <p>Gestiona tu información y tus pacientes</p>
+
+        </section>
+
+        <section class="doctor-card">
+
+            <div class="doctor-main">
+
+                <div class="doctor-avatar" id="doctor-initials">--</div>
+
+                <div class="doctor-name">
+                    <h2 id="doctor-full-name">...</h2>
+                </div>
+
+                <span>Profesional de la salud</span>
+
+            </div>
+
+            <div class="doctor-info">
+
+                <div class="info-item">
+
+                    <span>Cedula</span>
+                    <strong id="doctor-id">...</strong>
+
+                </div>
+
+                <div class="info-item">
+
+                    <span>Entidad de salud</span>
+                    <strong id="doctor-entity">...</strong>
+
+                </div>
+
+                <div class="info-item">
+                    <span>Género</span>
+                    <strong id="doctor-genre">...</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Fecha de nacimiento</span>
+                    <strong id="doctor-birth-date">...</strong>
+                </div>                
+
+                <div class="info-item">
+
+                    <span>Correo electronico</span>
+                    <strong id="doctor-email">...</strong>
+
+
+                </div>
+
+            </div>
+
+            <button class="btn-edit-profile" id="btn-edit-profile">Editar perfil</button>
+
+        </section>
+
+        <section class="patients-section">
+
+    <div class="patients-header">
+
+        <div>
+            <h2>Mis pacientes</h2>
+
+            <p>
+                Gestiona los pacientes registrados.
+            </p>
+        </div>
+
+
+        <button class="btn-add-patient" id="btn-add-patient">
+            + Agregar paciente
+        </button>
+
+    </div>
+
+
+    <div class="patients-list" id="patients-list">
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+<div class="modal" id="patient-modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>Agregar paciente</h2>
+                <p>Registra la información basica del paciente</p>
+
+            </div>
+
+            <button class="modal-close" id="modal-close">&times</button>
+
+        </div>
+
+       <form class="patient-form" id="patient-form">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="patient-name">Nombre</label>
+
+                    <input type="text" id="patient-name" placeholder="Nombre" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="patient-name">Apellido</label>
+
+                    <input type="text" id="patient-lastname" placeholder="Apellido" required>
+
+                </div>
+
+            </div>
+            
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="patient-id">Numero de documento</label>
+
+                        <input type="text" id="patient-id" placeholder="Documento" required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="patient-birthdate">Fecha de nacimiento</label>
+
+                        <input type="date" id="patient-birthdate" required>
+
+                    </div>                    
+
+                </div>
+
+                <div class="modal-actions">
+
+                    <button type="button" class="btn-cancel" id="btn-cancel">Cancelar</button>
+                    <button type="submit" class="btn-save-patient">Guardar paciente</button>
+
+                </div>
+
+       </form> 
+
+    </div>
+
+</div>
+
+
+<div class="modal" id="view-patient-modal">
+
+    <div class="modal-content patient-detail-content">
+
+        <div class="modal-header">
+
+            <div>
+                <h2 id="view-patient-name">
+                    Paciente
+                </h2>
+
+                <p>
+                    Información y seguimiento del paciente
+                </p>
+            </div>
+
+            <button
+                class="modal-close"
+                id="view-patient-close"
+                type="button"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <!-- Información personal -->
+
+        <section class="patient-personal-section">
+
+            <h3>Información personal</h3>
+
+            <div class="patient-detail-grid">
+
+                <div class="patient-detail-item">
+
+                    <span>Documento</span>
+
+                    <strong id="view-patient-id">
+                        ...
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-detail-item">
+
+                    <span>Fecha de nacimiento</span>
+
+                    <strong id="view-patient-birthdate">
+                        ...
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-detail-item">
+
+                    <span>Edad</span>
+
+                    <strong id="view-patient-age">
+                        ...
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Historial -->
+
+        <section class="patient-history-section">
+
+            <div class="history-header">
+
+                <div>
+                    <h3>Historial de pruebas</h3>
+
+                    <p>
+                        Consulta las pruebas registradas para este paciente.
+                    </p>
+                </div>
+
+
+                <button
+                    type="button"
+                    class="btn-register-test"
+                    id="btn-register-test"
+                >
+                    + Registrar prueba
+                </button>
+
+            </div>
+
+
+            <div
+                class="patient-history"
+                id="patient-history"
+            >
+
+                <p class="empty-history">
+                    Todavía no hay pruebas registradas.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+<div class="modal" id="edit-profile-modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Editar perfil</h2>
+                <p>Actualiza tu información personal.</p>
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="edit-profile-close"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <form id="edit-profile-form" class="patient-form">
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="edit-name">Nombre</label>
+
+                    <input
+                        type="text"
+                        id="edit-name"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="edit-lastname">Apellido</label>
+
+                    <input
+                        type="text"
+                        id="edit-lastname"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="edit-id">Cédula</label>
+
+                    <input
+                        type="text"
+                        id="edit-id"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="edit-entity">
+                        Entidad de salud
+                    </label>
+
+                    <select id="edit-entity" required>
+
+                        <option value="">
+                            Seleccione
+                        </option>
+
+                        <option value="sanitas">
+                            Sanitas
+                        </option>
+
+                        <option value="sura">
+                            SURA
+                        </option>
+
+                        <option value="compensar">
+                            Compensar
+                        </option>
+
+                        <option value="otro">
+                            Otro
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="edit-gender">
+                        Género
+                    </label>
+
+                    <select id="edit-gender">
+
+                        <option value="">
+                            Seleccione
+                        </option>
+
+                        <option value="masculino">
+                            Masculino
+                        </option>
+
+                        <option value="femenino">
+                            Femenino
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="edit-birthdate">
+                        Fecha de nacimiento
+                    </label>
+
+                    <input
+                        type="date"
+                        id="edit-birthdate"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn-cancel"
+                    id="edit-profile-cancel"
+                >
+                    Cancelar
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn-save-patient"
+                >
+                    Guardar cambios
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script type="module" src="/js/perfil.js"></script>
+<script type="module" src="/js/editarPerfil.js"></script>
+
+</body>
+
+</html>
